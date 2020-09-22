@@ -26,6 +26,10 @@ Project.init({
     siteUrl: {
         type: DataTypes.STRING(100),
         allowNull: true
+    },
+    technologies: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 },
     {

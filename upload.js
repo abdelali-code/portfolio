@@ -8,15 +8,18 @@ const storage = multer.diskStorage({
     },
 
     filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-        cb(null, file.fieldname + '-' + uniqueSuffix + '.' + file.mimetype.split("/")[1]);
+        if (file) {
+            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+            cb(null, file.fieldname + '-' + uniqueSuffix + '.' + file.mimetype.split("/")[1]);
+        }
     }
 });
 
 const imageFileFilter = (req, file, cb) => {
-    console.log("file ", file);
-    if (!file.originalname.match(/\.(jpg|jpeg|png|gif|svg)$/)) {
-        return cb(new Error('You can upload only image files!'), false);
+    if (file) {
+        if (!file.originalname.match(/\.(jpg|jpeg|png|gif|svg)$/)) {
+            return cb(new Error('You can upload only image files!'), false);
+        }
     }
     cb(null, true);
 };
@@ -25,9 +28,8 @@ const upload = multer({ storage: storage, fileFilter: imageFileFilter });
 
 
 const addFileToReq = (req, res, next) => {
-    console.log("path", req.file.path);
     if (req.file) {
-        console.log(req.file);
+        console.log("path ", req.file.path);
         req.body.image = req.file.path.substring(6);
         next();
     }

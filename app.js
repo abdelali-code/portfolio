@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require("cors");
 
-// const session = require('express-session');
+const session = require('express-session');
 // const FileStore = require('session-file-store')(session);
 
 const passport = require('passport');
@@ -19,6 +19,7 @@ const messageRouter = require("./routes/messages");
 const blogRouter = require("./routes/blog");
 const blogtRouter = require('./routes/blog');
 const categoryRouter = require("./routes/category");
+const skillsRouter = require("./routes/skills");
 const app = express();
 
 // view engine setup
@@ -51,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use(session(sess));
 app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.session());
 
 
 // function auth(req, res, next) {
@@ -76,6 +77,16 @@ app.use("/projects", projectRouter);
 app.use("/messages", messageRouter);
 app.use("/articles", blogtRouter);
 app.use("/categories", categoryRouter);
+app.use("/skills", skillsRouter);
+
+
+// serve static files 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  })
+}
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

@@ -1,0 +1,456 @@
+genaral class
+
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+label, input, button {
+  display: block;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-danger {
+  color: rgb(216, 27, 27);
+}
+
+.title {
+  font-size: 28px;
+  max-width: 140px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  border-bottom: 4px solid rgb(0, 190, 0);
+}
+
+.feedback {
+  margin: 0px;
+  padding: 0px;
+  color: rgb(216, 22, 22);
+  font-size: 13px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 12px auto;
+
+}
+
+.btn:hover {
+  background-color: rgb(0, 190, 0);
+  color: #fff;
+}
+
+
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+ /* end genaral classes */
+
+.App {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+/* navbar  */
+.nav {
+  /* background-color: #ccc; */
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+ 
+}
+.nav>div {
+  display: flex;
+  padding: 20px 0px;
+}
+
+.helper {
+  margin-bottom: 80px;
+}
+
+
+
+.nav ul {
+  display:  flex;
+  margin-left: auto;
+}
+
+.nav ul li:not(:last-child) {
+  margin-right: 40px;
+}
+.nav ul li {
+  padding: 10px;
+}
+
+.nav ul li:hover {
+  background-color: #222;
+}
+.nav ul li:hover a {
+  color: aliceblue;
+}
+
+.nav ul li a {
+  font-size: 18px;
+  color: #222
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.logo .A {
+  background-color: black;
+  color: #fff;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* end navbar */
+
+.logo .E {
+}
+/* home page */
+.fontPage {
+  /* background-color: black;
+  color: #fff; */
+  background-color: #eeeeee;
+  height: 80vh;
+  height: calc(100vh - 80px);
+  min-height: 700px;
+}
+
+.info {
+  text-align: center;
+  padding-top: calc((100vh - 80px) / 3);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.social-media-icon {
+  max-width: 60px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.github:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.linkden:hover {
+  background-color: rgb(0, 103, 187);
+  color: #fff;
+
+}
+
+.github,
+.linkden {
+  background-color: rgb(199, 199, 199);
+  color: #222;
+  padding: 5px;
+}
+.info .hello {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 20px;
+  color: rgb(0, 190, 0);
+}
+
+.info h1 {
+  font-size: 44px;
+  text-transform: capitalize;
+}
+.info h2 {
+  font-size: 32px;
+}
+
+/* end home page */
+
+
+
+
+/* about section */
+.about {
+  background-color: #fff;
+  padding: 48px 0px;
+  text-align: center;
+}
+
+.about .aboutInfo {
+  max-width: 800px;
+  margin: auto;
+}
+
+.aboutInfo p {
+  font-size: 17px;
+}
+
+/* end about section */
+
+/* conatact section */
+.contact {
+  background-color: #eeeeee;
+  padding: 48px 0px;
+}
+.contactInfo {
+  max-width: 900px;
+  margin: auto;
+}
+.contactInfo .title {
+  max-width: 160px;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.form-group label {
+  /* flex: 1; */
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.form-group .form-control {
+  /* flex: 6; */
+  padding: 12px 5px;
+  border-radius: 6px;
+  border: 1px solid rgb(0, 190, 0);
+  font-size: 16px;
+  outline-color: #eeeeee;
+}
+
+
+
+.form-group .form-control {
+  border-color: rgb(0, 190, 0);
+  outline-color: rgb(0, 190, 0);
+}
+
+/* end contact section */
+
+
+/* projects section */
+
+.projects {
+  padding: 48px 0px;
+}
+.prs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.prs .card {
+  width: 33%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.prs .cardTitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.842);
+  color: #eeeeee;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prs .card img {
+  max-width: 100%;
+}
+
+.prDescription {
+  display: none;
+}
+
+.prs .cardTitle h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.card:hover .prDescription {
+  display: block;
+  padding: 10px 15px;
+  margin: 0px;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+.projectsInfo .title {
+  max-width: 250px;
+}
+
+.projectsInfo .btn {
+  display: none;
+}
+
+.card:hover .btn {
+  display: block;
+}
+
+/* end projects section */
+
+/* footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  height: 90px;
+  text-align: center;
+  padding-top: 40px;
+}
+/* end footer */
+
+
+
+
+/* authentication */
+.authentication {
+  min-height: 700px;
+}
+
+.authentication .authContainer {
+  max-width: 400px;
+  position: relative;
+  top: 64px;
+  margin: auto;
+}
+.authentication .authContainer h3 {
+  text-align: center;
+
+}
+.authentication .authContainer label {
+  margin-bottom: 10px;
+}
+.authentication .authContainer label, button {
+  display: block;
+  font-weight: 700;
+} 
+.authentication .authContainer input {
+  width: 100%;
+  border: 1px solid rgb(160, 160, 160);
+  outline: none;
+  padding: 8px;
+  /* margin-bottom: 20px; */
+}
+
+.authentication .authContainer input:focus {
+  border-color: rgb(86, 150, 202);
+}
+
+.authentication .authContainer button {
+  margin: auto;
+  cursor: pointer;
+  padding: 8px;
+  min-width: 80px;
+  font-size: 18px;
+  background-color: rgb(31, 145, 238);
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+.authentication .authContainer button:hover {
+  background-color: rgb(57, 145, 218);
+}
+
+.authentication .authContainer button.switch {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  background-color: #fff;
+  color: rgb(0, 96, 160);;
+}
+
+.question {
+  margin: 32px 0px;
+  color: rgb(42, 41, 41);
+}
+
+.authentication .authContainer h3 {
+  font-size: 22px;
+  background-color: rgb(18, 18, 19);
+  padding: 8px 0px;
+  color: #fff;
+}
+/* end authentication */
+
+
+/* add project page */
+.addproject {
+  min-height: 700px;
+  min-height: calc(100vh - 200px);
+}
+.addproject .container h3 {
+  padding-top: 56px;
+}
+.addproject form div {
+  max-width: 400px;
+  margin: 24px 0px;
+  font-size: 14px;
+}
+.addproject form input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgb(231, 229, 229);
+  outline: none;
+}
+
+.addproject form input:focus, textarea:focus, select:focus {
+  border-color: rgb(0, 103, 187);
+}
+.addproject form .btnContainer {
+  background-color: #eeeeee;
+  max-width: 100% !important;
+  padding: 20px 0px;
+}
+
+.addproject form .btnContainer button {
+  margin: 12px;
+  background-color: rgb(8, 128, 241);
+  color: white;
+}
+
+hr {
+  border: 1px solid #eeeeee;
+}
+
+
+/* end add project */
+
+
+
+
+

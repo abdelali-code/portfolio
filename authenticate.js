@@ -12,7 +12,7 @@ passport.use(new LocalStrategy(function (username, password, done) {
         .then((user) => {
             if (!user) {
                 console.log("incorrect username");
-                return done(null, false);
+                return done(null, false, { message: "username or password are incorrect" });
             }
             bcrypt.compare(password, user.password)
                 .then((result) => {
@@ -22,7 +22,7 @@ passport.use(new LocalStrategy(function (username, password, done) {
                     }
                     else {
                         console.log("incorrect password");
-                        return done(null, false)
+                        return done(null, false, { message: "username or password are incorrect" })
                     }
                 })
                 .catch(err => next(err));
@@ -59,7 +59,7 @@ let opts = {
 };
 
 passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-    console.log("user id ", jwt_payload.id);
+    console.log("fffffffff")
     User.findByPk(jwt_payload.id)
         .then((user) => {
             if (user) {
@@ -77,10 +77,16 @@ passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
         })
 }))
 
+exports.test = (req, res, next) => {
+    console.log("headers ", req.headers);
+    console.log("body ", req.body);
+    next();
+}
 
 exports.verifyUser = passport.authenticate('jwt', { session: false });
 // verify if user is admin
 exports.verifyAdmin = (req, res, next) => {
+    console.log(req.user.admin);
     if (req.user.admin) {
         next();
     }

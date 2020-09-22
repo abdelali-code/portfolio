@@ -28,10 +28,10 @@ User.init({
         type: DataTypes.STRING(64),
         allowNull: false
     },
-    // email: {
-    //     type: DataTypes.STRING(100),
-    //     allowNull: true
-    // },
+    email: {
+        type: DataTypes.STRING(100),
+        allowNull: true
+    },
     admin: {
         type: DataTypes.BOOLEAN,
         defaultValue: false

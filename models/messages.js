@@ -8,12 +8,8 @@ class Message extends Model {
     }
 }
 Message.init({
-    firstname: {
-        type: DataTypes.STRING(64),
-        allowNull: false
-    },
-    lastname: {
-        type: DataTypes.STRING(64),
+    name: {
+        type: DataTypes.STRING(100),
         allowNull: false
     },
     email: {
