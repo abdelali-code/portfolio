@@ -25,6 +25,6 @@ Category.init({
 })
 
 // creates the table if it doesn't exist (and does nothing if it already exists)
-Category.sync({ alter: true });
+// Category.sync({ alter: true });
 
 module.exports = Category;

@@ -549,3 +549,39 @@ export const addSkill = (data, resetFields, setFile) => dispatch => {
         })
         .catch(err => { warningInfo(err.message) });
 }
+
+const removeSkills = (data) => ({
+    type: Actions.DELETE_SKILL,
+    data: data
+})
+
+
+export const deleteSkills = (ids) => dispatch => {
+    console.log("ids ", ids);
+    const token = localStorage.getItem("token");
+    return fetch(baseUrl + "skills", {
+        method: "DELETE",
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token // if you use token
+        },
+        body: JSON.stringify(ids)
+    }).then((res) => {
+        if (res.ok) {
+            return res.json();
+        }
+        let err = new Error("Error " + res.statusText + " " + res.status);
+        throw err;
+    }).then((res) => {
+        console.log(res);
+        if (res > 0) {
+            dispatch(removeSkills(ids));
+            successInfo("skills deleted successfully");
+        }
+        else {
+            warningInfo("please select user from table");
+        }
+    })
+        .catch((err) => warningInfo(err.message));
+}

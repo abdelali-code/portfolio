@@ -42,7 +42,7 @@ const Navbar = (props) => {
     }
     return (
         <Header className="header">
-            <div className="logo">logo</div>
+            <div className="logo"><Link to="/"><span>A</span>E</Link></div>
             {/* render this is the login users are not admin */}
             {!state.authentication.isAdmin ?
                 <Menu mode="horizontal" onClick={handleClick} selectedKeys={[activeNav]} className="nav-list" theme="dark">

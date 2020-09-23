@@ -50,7 +50,7 @@ const ProjectsLit = (props) => {
                                         okText="Yes"
                                         cancelText="No"
                                     >
-                                        <Button className="delete">delete</Button>
+                                        <Button className="delete" style={{ marginRight: "15px" }}>delete</Button>
                                     </Popconfirm>
                                 </div>
                             ]}

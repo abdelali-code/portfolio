@@ -3,7 +3,7 @@ import { Button, Table, Divider, Popconfirm, Space, Tag, Breadcrumb } from 'antd
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
-import { deleteComments } from "../../redux/actionsCreators";
+import { deleteSkills } from "../../redux/actionsCreators";
 import { baseUrl } from "../../shared/baseUrl";
 
 
@@ -19,7 +19,7 @@ const columns = [
         dataIndex: "image",
         render: (text, record) => (
             <img
-                width={272}
+                width={128}
                 height={150}
                 alt="logo"
                 src={baseUrl + record.image}
@@ -41,7 +41,7 @@ const SkillsList = () => {
 
 
     const confirm = () => {
-        dispatch(deleteComments(selectedRow));
+        dispatch(deleteSkills(selectedRow));
     }
 
     const cancel = () => {
@@ -61,7 +61,14 @@ const SkillsList = () => {
                 </Breadcrumb.Item>
             </Breadcrumb>
             <div className="container">
-                <h3>messages:</h3>
+                <div className="pageTitle">
+                    <h3>skills List : </h3>
+                    <Button type="primary">
+                        <Link to='/dashboard/skills/add'>
+                            add New
+                    </Link>
+                    </Button>
+                </div>
                 <Divider />
                 <div>
                     <Popconfirm
@@ -72,7 +79,9 @@ const SkillsList = () => {
                         cancelText="No"
                     >
                         <Button className="delete">Delete</Button>
-                    </Popconfirm>                </div>
+
+                    </Popconfirm>
+                </div>
                 <Table
                     rowSelection={{
                         type: "checkbox",

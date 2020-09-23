@@ -46,7 +46,7 @@ User.init({
     });
 
 // creates the table if it doesn't exist (and does nothing if it already exists)
-User.sync({ alter: true });
+// User.sync({ alter: true });
 // project.sync();
 
 

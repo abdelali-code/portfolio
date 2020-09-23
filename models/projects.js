@@ -42,7 +42,7 @@ Project.init({
 Project.belongsTo(Category, { onDelete: "CASCADE", onUpdate: "CASCADE" });
 // creates the table if it doesn't exist (and does nothing if it already exists)
 // this option is only fro developement purpose
-Project.sync({ alter: true });
+// Project.sync({ alter: true });
 
 
 module.exports = Project;

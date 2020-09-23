@@ -39,6 +39,12 @@ const Dashboard = () => {
                         <Link to='/dashboard/messages'><DeleteOutlined style={deleteItem} />delete</Link>
                         <Link to="/dashboard/messages"><PlusOutlined />add</Link>
                     </List.Item>
+
+                    <List.Item>
+                        <Link to="/dashboard/skills">Skills</Link>
+                        <Link to='/dashboard/skills'><DeleteOutlined style={deleteItem} />delete</Link>
+                        <Link to="/dashboard/skills/add"><PlusOutlined />add</Link>
+                    </List.Item>
                 </List>
             </div>
         </main>

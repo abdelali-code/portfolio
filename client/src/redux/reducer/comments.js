@@ -14,6 +14,5 @@ export const commentsReducer = (state = { errMess: null, comments: [] }, action)
             return { ...state, errMess: null, comments: state.comments.filter(comm => action.data.indexOf(comm.id) === -1) };
         default:
             return state;
-
     }
 }

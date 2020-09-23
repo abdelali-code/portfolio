@@ -1,9 +1,12 @@
 import React from "react";
 import { Col, Divider, List, Row, Image } from "antd";
-
+import { useSelector } from "react-redux";
+import { baseUrl } from "../shared/baseUrl";
 
 
 const About = () => {
+    const state = useSelector(state => state);
+
     return (
         <section className="about section" id="aboutUs">
             <div className="container">
@@ -31,13 +34,16 @@ const About = () => {
                 <div className="skillsContainer">
                     <h3 className="text-center">My Skills</h3>
                     <Row gutter={[24, 24]}>
-                        <Col md={6} xs={12} className="skill">
-                            <div>
-                                <Image src="/images/sass.svg" width="100%" height="100%" />
-                            </div>
-                            <span className="skillName">Sass</span>
-                        </Col>
-                        <Col md={6} xs={12} className="skill">
+                        {state.skills.skills.map(skill => (
+                            <Col md={6} xs={12} className="skill" key={skill.id}>
+                                <div>
+                                    <Image src={baseUrl + skill.image} width="100%" height="100%" />
+                                </div>
+                                <span className="skillName">{skill.name}</span>
+                            </Col>
+                        ))}
+
+                        {/* <Col md={6} xs={12} className="skill">
                             <div>
                                 <Image src="/images/css.svg" width="100%" height="100%" />
                             </div>
@@ -66,7 +72,7 @@ const About = () => {
                                 <Image src="/images/mysql.svg" width="100%" height="100%" />
                             </div>
                             <span className="skillName">Mysql</span>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </div>
             </div>

@@ -37,7 +37,7 @@ Article.belongsTo(User, { onDelete: "CASCADE", allowNull: false });
 // User.hasMany(Article);
 
 // creates the table if it doesn't exist (and does nothing if it already exists)
-Article.sync({ alter: true });
+// Article.sync({ alter: true });
 
 
 module.exports = Article;

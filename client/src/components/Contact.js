@@ -129,7 +129,9 @@ const SocialMedia = () => {
             </Col>
             <Col span={8}>
                 <span>Contact me</span>
-                <LinkedinFilled className="icon" />
+                <a href="https://linkden.com">
+                    <LinkedinFilled className="icon" />
+                </a>
                 <span>On Linkden</span>
             </Col>
         </Row>

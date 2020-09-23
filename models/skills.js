@@ -30,7 +30,7 @@ Skill.init({
 
 // creates the table if it doesn't exist (and does nothing if it already exists)
 // this option is only fro developement purpose
-Skill.sync({ alter: true });
+// Skill.sync({ alter: true });
 
 
 module.exports = Skill;
