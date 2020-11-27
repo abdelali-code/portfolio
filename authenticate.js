@@ -59,7 +59,6 @@ let opts = {
 };
 
 passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-    console.log("fffffffff")
     User.findByPk(jwt_payload.id)
         .then((user) => {
             if (user) {
